@@ -13,6 +13,16 @@ const pool = new Pool({
 console.log("Connected to database pool!");
 
 class UserModel {
+  static async getAllUsers() {
+    const client = await pool.connect();
+    try {
+      const result = await client.query("SELECT * FROM users");
+      return result.rows;
+    } finally {
+      client.release();
+    }
+  }
+
   static async createUser(newUser) {
     const client = await pool.connect();
     try {

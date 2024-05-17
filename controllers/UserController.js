@@ -39,19 +39,6 @@ exports.deleteUser = async (req, res) => {
   }
 };
 
-exports.getUserByUsername = async (req, res) => {
-  try {
-    const { username } = req.params;
-    const user = await UserModel.getUserByUsername(username);
-    if (!user) {
-      return res.status(404).json({ error: "User not found" });
-    }
-    res.json(user);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-};
-
 exports.searchUsers = async (req, res) => {
   try {
     const queryParams = req.query;
