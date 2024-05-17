@@ -13,19 +13,6 @@ const pool = new Pool({
 console.log("Connected to database pool!");
 
 class UserModel {
-  static async getAllUsers() {
-    const client = await pool.connect();
-    try {
-      const result = await client.query("SELECT * FROM users;");
-      return result.rows;
-    } catch (error) {
-      console.error("Error fetching users:", error);
-      throw error; // Re-throw the error for proper handling in the route
-    } finally {
-      client.release();
-    }
-  }
-
   static async createUser(newUser) {
     const client = await pool.connect();
     try {
@@ -76,35 +63,37 @@ class UserModel {
   static async searchUsers(queryParams) {
     const client = await pool.connect();
     try {
-      const { rows } = await client.query(
-        "SELECT * FROM users WHERE username ILIKE $1 OR fullname ILIKE $2 OR role ILIKE $3 OR activeYn = $4",
-        [
-          `%${queryParams.username}%`,
-          `%${queryParams.fullname}%`,
-          `%${queryParams.role}%`,
-          queryParams.activeYn,
-        ]
-      );
+      let query = "SELECT * FROM users WHERE 1=1";
+      let values = [];
+      let index = 1;
+
+      if (queryParams.username) {
+        query += ` AND username ILIKE $${index}`;
+        values.push(`%${queryParams.username}%`);
+        index++;
+      }
+      if (queryParams.fullname) {
+        query += ` AND fullname ILIKE $${index}`;
+        values.push(`%${queryParams.fullname}%`);
+        index++;
+      }
+      if (queryParams.role) {
+        query += ` AND role ILIKE $${index}`;
+        values.push(`%${queryParams.role}%`);
+        index++;
+      }
+      if (queryParams.activeYn) {
+        query += ` AND activeYn = $${index}`;
+        values.push(queryParams.activeYn);
+        index++;
+      }
+
+      const { rows } = await client.query(query, values);
       return rows;
     } finally {
       client.release();
     }
   }
-
-  static async getUserByUsername(username) {
-    const client = await pool.connect();
-    try {
-      const { rows } = await client.query(
-        "SELECT * FROM users WHERE username = $1",
-        [username]
-      );
-      return rows[0];
-    } finally {
-      client.release();
-    }
-  }
-
-  // Implement other CRUD operations (create, read by ID, update, delete)
 }
 
 module.exports = UserModel;
