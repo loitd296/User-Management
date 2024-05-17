@@ -10,11 +10,9 @@ This project implements a RESTful API using Docker for containerization, Node.js
 | Feature | Image |
 |---------|-------|
 | Create User | [![Create User](https://github.com/loitd296/User-Management/assets/97017479/f2fe3f4d-322c-4fb6-bd64-ac06395c3deb)](#) |
-| Update User | [![Update User](https://github.com/loitd296/User-Management/assets/97017479/347d1b75-fab9-4470-b221-fd1b1a9a105f)](#) |
+| Update User | [![Update User](https://github.com/loitd296/User-Management/assets/97017479/30181ea3-86e4-4c71-9d41-0a5c6bf9d87e)](#) |
 | Delete User | [![Delete User](https://github.com/loitd296/User-Management/assets/97017479/e7c9bf2c-aafe-4857-ac07-14551c07a1ab)](#) |
 | Search User | [![Search User](https://github.com/loitd296/User-Management/assets/97017479/46821bf0-c9e1-4b30-b36a-e95a195fe49d)](#) |
-
-
 
 
 ## Setting Up Docker (Optional)
