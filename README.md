@@ -7,10 +7,13 @@ This project implements a RESTful API using Docker for containerization, Node.js
 - Node.js and npm (Node Package Manager) installed: Download and install Node.js from the official website, which includes npm https://nodejs.org/en.
 
 ## Result
-| Image 1 | Image 2 | Image 3 | Image 4 |
-|---|---|---|---|
-| [<img src="https://github.com/loitd296/User-Management/assets/97017479/f2fe3f4d-322c-4fb6-bd64-ac06395c3deb" alt="Create User" width="200">](#) | [<img src="https://github.com/loitd296/User-Management/assets/97017479/347d1b75-fab9-4470-b221-fd1b1a9a105f" alt="Update User" width="200">](#) | [<img src="https://github.com/loitd296/User-Management/assets/97017479/e7c9bf2c-aafe-4857-ac07-14551c07a1ab" alt="Delete User" width="200">](#) | [<img src="https://github.com/loitd296/User-Management/assets/97017479/46821bf0-c9e1-4b30-b36a-e95a195fe49d" alt="Search User" width="200">](#) |
-| Create User | Update User | Delete User | Search User |
+| Feature | Image |
+|---------|-------|
+| Create User | [![Create User](https://github.com/loitd296/User-Management/assets/97017479/f2fe3f4d-322c-4fb6-bd64-ac06395c3deb)](#) |
+| Update User | [![Update User](https://github.com/loitd296/User-Management/assets/97017479/347d1b75-fab9-4470-b221-fd1b1a9a105f)](#) |
+| Delete User | [![Delete User](https://github.com/loitd296/User-Management/assets/97017479/e7c9bf2c-aafe-4857-ac07-14551c07a1ab)](#) |
+| Search User | [![Search User](https://github.com/loitd296/User-Management/assets/97017479/46821bf0-c9e1-4b30-b36a-e95a195fe49d)](#) |
+
 
 
 
