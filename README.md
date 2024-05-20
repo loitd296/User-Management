@@ -13,6 +13,12 @@ This project implements a RESTful API using Docker for containerization, Node.js
 | Update User | [![Update User](https://github.com/loitd296/User-Management/assets/97017479/30181ea3-86e4-4c71-9d41-0a5c6bf9d87e)](#) |
 | Delete User | [![Delete User](https://github.com/loitd296/User-Management/assets/97017479/e7c9bf2c-aafe-4857-ac07-14551c07a1ab)](#) |
 | Search User | [![Search User](https://github.com/loitd296/User-Management/assets/97017479/46821bf0-c9e1-4b30-b36a-e95a195fe49d)](#) |
+| Docker Container | ![image](https://github.com/loitd296/User-Management/assets/97017479/4d945723-6d17-4290-a4d6-129a4ab73a20) |
+| Nodejs App | ![image](https://github.com/loitd296/User-Management/assets/97017479/42df3967-63aa-48fe-9d8f-9f637a86fa48) |
+| Postgre | ![image](https://github.com/loitd296/User-Management/assets/97017479/af598c71-6150-4c22-b88e-8d9cde0b60da) |
+| [Docker Hub](https://hub.docker.com/layers/loitdgcc200345834/user-management-app/1.0/images/sha256:c7c76a15d639f5d72252199b6e58cc7e03addffa3f049c8cba20f7f5bcc4bb37?uuid=08314D9A-19D8-4C50-98A9-D80C9C0A9AD0) | ![image](https://github.com/loitd296/User-Management/assets/97017479/c8a9c551-6305-48e0-add7-23ef51b841e6) |
+
+
 
 
 ## Setting Up Docker (Optional)
@@ -57,7 +63,7 @@ Explanation:
 - `-U postgres`: Connects as the postgres user (default for the image).
 - `-h localhost`: Connects to the PostgreSQL server on the host machine (localhost).
 - `-p 5432`: Uses the mapped container port 5432.
-- `-c "CREATE DATABASE my_api_db;"`: Executes the SQL command to create the database named my_api_db.
+- `-c "CREATE DATABASE my-user;"`: Executes the SQL command to create the database named my_api_db.
 
 
 you can check the database is created, you can use this command:
@@ -109,6 +115,10 @@ DB_PORT="yourport"
 6. Running project:
 ```
 npm start
+```
+7. Running on the docker container
+```
+docker-compose up --build
 ```
 
 
