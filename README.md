@@ -59,6 +59,31 @@ Explanation:
 - `-p 5432`: Uses the mapped container port 5432.
 - `-c "CREATE DATABASE my_api_db;"`: Executes the SQL command to create the database named my_api_db.
 
+
+you can check the database is created, you can use this command:
+
+```docker
+\l
+```
+
+Connect with my_api_db
+
+```docker
+\c my_api_db
+```
+
+Create Table:
+
+```docker
+CREATE TABLE users (
+username varchar(255) PRIMARY KEY,
+fullname varchar(255) NOT NULL,
+role varchar(255) NOT NULL,
+project text[] DEFAULT '{}', -- Array of strings for projects
+activeYn varchar(1) CHECK (activeYn IN ('Y', 'N')) -- Enforce Y or N values
+);
+```
+
 ## Project Setup
 
 1. Clone or download this project.
